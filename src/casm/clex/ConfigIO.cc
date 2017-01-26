@@ -269,7 +269,9 @@ namespace CASM {
       std::vector<std::string> splt_vec;
       boost::split(splt_vec, args, boost::is_any_of(","), boost::token_compress_on);
 
-      m_clex_name = "";
+      if(!m_clex_name.empty())
+        return false;
+
       if(splt_vec.size()) {
         m_clex_name = splt_vec[0];
       }
