@@ -43,7 +43,7 @@ fi;
 
 AX_CXX_COMPILE_STDCXX_11
 BOOSTV=1.54
-AX_BOOST_BASE([$BOOSTV],[],AC_MSG_ERROR[(You need Boost $BOOSTV libraries or higher.]))
+AX_BOOST_BASE([$BOOSTV],[],AC_MSG_ERROR([You need Boost $BOOSTV libraries or higher.]))
 AX_BOOST_FILESYSTEM
 AX_BOOST_SYSTEM
 AX_BOOST_REGEX
