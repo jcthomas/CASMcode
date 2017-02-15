@@ -9,11 +9,15 @@
 
 namespace CASM {
 
+  /// \defgroup casmIO IO
+  ///
+  /// \brief Input/output classes and functions
+
   /// \defgroup EnumIO
   ///
   /// \brief Helpers for enum class IO
   ///
-  /// \ingroup CASM_IO
+  /// \ingroup casmIO
 
   template <typename T>
   struct traits {};

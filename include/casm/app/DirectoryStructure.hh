@@ -9,6 +9,15 @@
 
 namespace CASM {
 
+  /**
+   * \ingroup Project
+   *
+   * @{
+   */
+
+  template<typename DataObject>
+  class QueryTraits;
+
   /// return path to current or parent directory containing ".casm" directory
   ///   if none found, return empty path
   inline fs::path find_casmroot(const fs::path &cwd) {
@@ -119,6 +128,17 @@ namespace CASM {
     /// \brief Return master config_list.json file path
     fs::path config_list() const {
       return m_root / m_casm_dir / "config_list.json";
+    }
+
+    /// \brief Return enumerators plugin dir
+    fs::path enumerator_plugins() const {
+      return m_root / m_casm_dir / "enumerators";
+    }
+
+    /// \brief Return enumerators plugin dir
+    template<typename DataObject>
+    fs::path query_plugins() const {
+      return m_root / m_casm_dir / "query" / QueryTraits<DataObject>::name;
     }
 
     // -- Symmetry --------
@@ -383,6 +403,8 @@ namespace CASM {
     std::string m_clex_dir;
 
   };
+
+  /** @} */
 }
 
 #endif
