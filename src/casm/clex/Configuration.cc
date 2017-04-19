@@ -591,17 +591,7 @@ namespace CASM {
   }
 
   void Configuration::_generate_name() const {
-
-    // canonical forms in canonical supercells
-    if(get_id() != "none") {
-      m_name = get_supercell().get_name() + "/" + get_id();
-    }
-    else if(get_supercell().is_canonical() && is_canonical()) {
-      m_name = get_supercell().get_name() + "/" + get_id();
-    }
-    else {
-      m_name = get_supercell().get_name() + "/non_canonical_equivalent";
-    }
+    m_name = get_supercell().get_name() + "/" + get_id();
   }
 
   //*********************************************************************************
@@ -1113,6 +1103,11 @@ namespace CASM {
   //*********************************************************************************
   fs::path Configuration::get_pos_path() const {
     return get_primclex().dir().POS(name());
+  }
+
+  //*********************************************************************************
+  fs::path Configuration::calc_dir() const {
+    return get_primclex().dir().configuration_calc_dir(name(), get_primclex().settings().default_clex().calctype);
   }
 
   //*********************************************************************************
