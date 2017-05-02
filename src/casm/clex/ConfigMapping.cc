@@ -188,12 +188,14 @@ namespace CASM {
         //relaxation_properties["suggested_mapping"] = "unknown";
       }
     }
-    if(struc_to_configdof(_struc,
-                          tconfigdof,
-                          mapped_lat,
-                          best_assignment,
-                          cart_op,
-                          hint_cost)) {
+
+    if(!(m_strict_flag && hint_cost < 1e10)
+       && struc_to_configdof(_struc,
+                             tconfigdof,
+                             mapped_lat,
+                             best_assignment,
+                             cart_op,
+                             hint_cost)) {
 
       bc = ConfigMapping::basis_cost(tconfigdof, _struc.basis.size());
       sc = ConfigMapping::strain_cost(_struc.lattice(), tconfigdof, _struc.basis.size());
