@@ -193,21 +193,13 @@ namespace CASM {
           //NOTE: reusing jsonParser to collect relaxation data
           json.put_obj();
           try {
-            if(vm.count("strict")) {
-              new_config_flag = configmapper.import_structure(relaxed_struc,
-                                                              imported_name,
-                                                              json,
-                                                              best_assignment,
-                                                              cart_op);
-            }
-            else {
-              new_config_flag = configmapper.import_structure_occupation(relaxed_struc,
-                                                                         &(*it),
-                                                                         imported_name,
-                                                                         json,
-                                                                         best_assignment,
-                                                                         cart_op);
-            }
+            new_config_flag = configmapper.import_structure_occupation(relaxed_struc,
+                                                                       &(*it),
+                                                                       imported_name,
+                                                                       json,
+                                                                       best_assignment,
+                                                                       cart_op);
+
           }
           catch(std::exception &e) {
             args.err_log << "\nError: Unable to map relaxed structure data contained in " << filepath << " onto PRIM.\n"
