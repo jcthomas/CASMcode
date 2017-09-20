@@ -238,7 +238,7 @@ namespace CASM {
     ///
 
     class MagBase : public ConfigIO_impl::MolDependent {
-    /* class MagBase : public VectorXdAttribute<Configuration> { */
+      /* class MagBase : public VectorXdAttribute<Configuration> { */
 
     public:
 
