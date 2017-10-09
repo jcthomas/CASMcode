@@ -21,13 +21,13 @@ BOOST_AUTO_TEST_CASE(FunctionTest) {
 
   fs::ofstream file(cc_filename);
   file << "#include <iostream>\n"
-          "extern \"C\" int forty_two() {\n"
-          "   return 42;\n"
-          "}\n"
-          "\n"
-          "extern \"C\" int add(int a, int b) {\n"
-          "   return a + b;\n"
-          "}\n";
+       "extern \"C\" int forty_two() {\n"
+       "   return 42;\n"
+       "}\n"
+       "\n"
+       "extern \"C\" int add(int a, int b) {\n"
+       "   return a + b;\n"
+       "}\n";
   file.close();
 
   std::string compile_opt = RuntimeLibrary::default_cxx().first + " " + RuntimeLibrary::default_cxxflags().first;

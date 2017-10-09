@@ -1,5 +1,6 @@
 include python/casm/Makemodule.am
 include python/vasp/Makemodule.am
+include python/seqquest/Makemodule.am
 
 #install:
 #	cd $(top_srcdir)/python/casm && $(PYTHON) $(abs_builddir)/casm/setup.py install --prefix=$(PYTHON_PREFIX)
