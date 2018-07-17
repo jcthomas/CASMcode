@@ -29,9 +29,14 @@ casmproject_PYTHON=python/casm/casm/project/project.py\
 				   python/casm/casm/project/io.py
 casmprojectdir=$(casmpydir)/project
 
-casmquestwrapper_PYTHON=python/casm/casm/questwrapper/__init__.py\
-						python/casm/casm/questwrapper/questwrapper.py\
-						python/casm/casm/questwrapper/relax.py
+casmqewrapper_PYTHON=python/casm/casm/qewrapper/qewrapper.py\
+					   python/casm/casm/qewrapper/relax.py\
+					   python/casm/casm/qewrapper/__init__.py
+casmqewrapperdir=$(casmpydir)/qewrapper
+
+casmquestwrapper_PYTHON=python/casm/casm/questwrapper/questwrapper.py\
+					   python/casm/casm/questwrapper/relax.py\
+					   python/casm/casm/questwrapper/__init__.py
 
 casmquestwrapperdir=$(casmpydir)/questwrapper
 
